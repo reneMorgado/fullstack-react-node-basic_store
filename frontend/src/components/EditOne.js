@@ -11,8 +11,6 @@ const EditOne = (props) => {
         let amount = parseInt(document.getElementById(`amount${id}`).value,10)
         let price = parseInt(document.getElementById(`price${id}`).value,10)
         let description = document.getElementById(`description${id}`).value
-        console.log(name,img,amount,price,description)
-
         if(name === "" || img === "" || isNaN(amount) || isNaN(price) || description === "" || amount <= 0 || price <= 0){
             alert('Llene los campos correctamente')
         }else{
@@ -22,9 +20,6 @@ const EditOne = (props) => {
             newBodyFormData.append('amount', amount)
             newBodyFormData.append('price', price)
             newBodyFormData.append('description', description)
-
-            console.log(newBodyFormData)
-
             Axios({
                 method: 'POST',
                 url: `${ApiURL}/update/${id}`,

@@ -18,7 +18,7 @@ const CartCard = (props) => {
             <div className="buttons">
                 <button
                 className="button is-danger" 
-                onClick={()=>props.onCartChange(props.fullItem)}
+                onClick={()=>props.onCartChange(props.id)}
                 >Eliminar del carrito</button>
             </div>
         </div>

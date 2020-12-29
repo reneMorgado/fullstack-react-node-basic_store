@@ -18,12 +18,12 @@ const ItemCard = (props) => {
                     </div>
                 </div>
                 <div className="content">
-                    {props.amount} disponibles. {props.description} 
+                    {props.amount > 0 ? `${props.amount === 1 ? `${props.amount} disponible`:`${props.amount} disponibles`}` : 'Agotado'} {props.description} 
                 </div>
                 <div className="buttons">
                     <button id={`button-${props.index}`} 
                     className="button is-info" 
-                    onClick={()=>props.onCartChange(props.fullItem)}>Añadir al carrito</button>
+                    onClick={()=>props.onCartChange(props.id)}>Añadir al carrito</button>
                 </div>
             </div>
         </div>

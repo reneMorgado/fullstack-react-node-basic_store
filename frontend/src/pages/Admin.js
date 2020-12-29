@@ -1,10 +1,12 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import AddProduct from '../components/AddProduct'
 import DeleteProducts from '../components/DeleteProducts'
 import EditProducts from '../components/EditProducts'
+import ItemsContext from '../context/ItemsContext'
 
-const Admin = (props) => {
+const Admin = () => {
 
+    const {items} = useContext(ItemsContext)
     const [add, setAdd] = useState(false)
     const [remove, setRemove] = useState(false)
     const [edit, setEdit] = useState(false)
@@ -17,10 +19,10 @@ const Admin = (props) => {
         addProduct = <AddProduct></AddProduct>
     }
     if(remove){
-        removeProduct = <DeleteProducts items={props.items}></DeleteProducts>
+        removeProduct = <DeleteProducts items={items}></DeleteProducts>
     }
     if(edit){
-        editProduct = <EditProducts items={props.items}></EditProducts>
+        editProduct = <EditProducts items={items}></EditProducts>
     }
 
     const handleStateChange = (type) => {

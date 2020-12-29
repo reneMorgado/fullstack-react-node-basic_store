@@ -2,8 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import 'bulma/css/bulma.css'
+import { ItemsContextProvider } from './context/ItemsContext';
 ReactDOM.render(
-    <App />,
+  <ItemsContextProvider>
+    <App />
+  </ItemsContextProvider>,
   document.getElementById('root')
 );
 

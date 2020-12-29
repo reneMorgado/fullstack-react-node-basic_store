@@ -6,7 +6,7 @@ const Hero = (props) => {
         <div className="hero-body">
             <div className="container">
                 <h1 className="title">
-                    {props.Title}
+                    Dulceria
                 </h1>
                 <h2 className="subtitle">
 
